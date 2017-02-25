@@ -21,12 +21,21 @@ namespace DemandeMateriel
 
         protected void ButtonValidation_Click(object sender, EventArgs e)
         {
-            //DirectoryEntry connexion = LDAPUtils.ConnexionLDAP("192.168.0.20","vdrevet","Mas1873");
-            bool estvalide = LDAPUtils.ValidationLogin(TextBoxLogin.Text.ToString(), TextBoxPassword.Text.ToString());
-            Response.Write(estvalide);
+            //Connexion au serveur LDAP
+            DirectoryEntry connexion = LDAPUtils.ConnexionLDAP("192.168.0.20","vdrevet","Mas1873");
+            //Chargement du context 
+            PrincipalContext contexte = new PrincipalContext(ContextType.Domain, "192.168.0.20");
+            //Verification des logins et mot de passe saisie par l'utilisateur dans l'active directory
+            bool estvalide = LDAPUtils.ValidationLogin(contexte,TextBoxLogin.Text.ToString(), TextBoxPassword.Text.ToString());
+            
 
             if(estvalide == true)
             {
+                //Récuperation de toutes les propriétés associé à cette utilisateur
+                DirectoryEntry utilisateur = LDAPUtils.RecuperationUtilisateur(connexion, TextBoxLogin.Text.ToString());
+                //Affectation de la propriété LDAP avec session
+                Session["Nom_Prenom"] = utilisateur.Properties["Name"].Value.ToString();
+                Response.Redirect("PageCentral.aspx");
                 
             }
             else

@@ -39,7 +39,7 @@
                 <table align="center" class="auto-style3">
                     <tr>
                         <td class="auto-style5">
-                            <asp:TextBox ID="TextBoxLogin" runat="server" Width="150px"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxLogin" runat="server" Width="150px" placeholder="Login"></asp:TextBox>
                         </td>
                         <td class="auto-style4">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorLogin" runat="server" ControlToValidate="TextBoxLogin" ErrorMessage="*Champ Obligatoire" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -47,7 +47,7 @@
                     </tr>
                     <tr>
                         <td class="auto-style6">
-                            <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" Width="150px"></asp:TextBox>
+                            <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password" Width="150px" placeholder="Mot de Passe"></asp:TextBox>
                         </td>
                         <td>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorPassword" runat="server" ControlToValidate="TextBoxPassword" ErrorMessage="*Champ Obligatoire" ForeColor="Red"></asp:RequiredFieldValidator>

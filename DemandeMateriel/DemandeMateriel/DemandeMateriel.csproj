@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Nouvelle_Demande.aspx" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -91,6 +92,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nouvelle_Demande.aspx.cs">
+      <DependentUpon>Nouvelle_Demande.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nouvelle_Demande.aspx.designer.cs">
+      <DependentUpon>Nouvelle_Demande.aspx</DependentUpon>
     </Compile>
     <Compile Include="PageCentral.aspx.cs">
       <DependentUpon>PageCentral.aspx</DependentUpon>

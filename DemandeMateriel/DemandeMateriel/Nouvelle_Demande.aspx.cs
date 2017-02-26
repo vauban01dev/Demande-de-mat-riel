@@ -11,6 +11,15 @@ namespace DemandeMateriel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["Nom_Prenom"] == null)
+            {
+                Response.Redirect("index.aspx");
+            }
+            LabelDemandeur.Text = Session["Nom_Prenom"].ToString();
+        }
+
+        protected void DropDownListTypeMateriel_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

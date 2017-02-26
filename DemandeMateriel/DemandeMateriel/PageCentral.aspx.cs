@@ -11,6 +11,7 @@ namespace DemandeMateriel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Test si une session existe ou non afin de permettre l'accès au site réservé.
             if(Session["Nom_Prenom"] == null)
             {
                 Response.Redirect("index.aspx");

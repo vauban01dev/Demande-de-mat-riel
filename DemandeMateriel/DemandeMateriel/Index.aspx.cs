@@ -35,12 +35,13 @@ namespace DemandeMateriel
                 DirectoryEntry utilisateur = LDAPUtils.RecuperationUtilisateur(connexion, TextBoxLogin.Text.ToString());
                 //Affectation de la propriété LDAP avec session
                 Session["Nom_Prenom"] = utilisateur.Properties["Name"].Value.ToString();
+                //Redirection vers la page central du site
                 Response.Redirect("PageCentral.aspx");
                 
             }
             else
             {
-                
+                //Si l'authentification echoue on affiche un message javascript et on redemande de saisir son mot de passe
                 String message = "alert(\"Erreur : Login ou Mot de passe incorrect\");";
                 ScriptManager.RegisterStartupScript(this, GetType(), "ServerControlScript", message, true);
             }

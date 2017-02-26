@@ -4,6 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" type="text/css" href="Style/Style.css" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <style type="text/css">
@@ -39,7 +40,7 @@
                 <table align="center" class="auto-style3">
                     <tr>
                         <td class="auto-style5">
-                            <asp:TextBox ID="TextBoxLogin" runat="server" Width="150px" placeholder="Login"></asp:TextBox>
+                            <asp:TextBox class="TextBoxLoginStyle" ID="TextBoxLogin" runat="server" Width="150px" placeholder="Login"></asp:TextBox>
                         </td>
                         <td class="auto-style4">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorLogin" runat="server" ControlToValidate="TextBoxLogin" ErrorMessage="*Champ Obligatoire" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -55,7 +56,7 @@
                     </tr>
                 </table>
                 <br />
-                <asp:Button ID="ButtonValidation" runat="server" OnClick="ButtonValidation_Click" Text="Valider" />
+                <asp:Button class="ButtonValidation" ID="ButtonValidation" runat="server" OnClick="ButtonValidation_Click" Text="Valider" />
                 <br />
             </div>
         </div>

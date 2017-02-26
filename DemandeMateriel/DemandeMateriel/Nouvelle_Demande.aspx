@@ -32,7 +32,7 @@
             <br />
             <br />
             Type de matériel :
-            <asp:DropDownList ID="DropDownListTypeMateriel" runat="server">
+            <asp:DropDownList ID="DropDownListTypeMateriel" runat="server" OnSelectedIndexChanged="DropDownListTypeMateriel_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
